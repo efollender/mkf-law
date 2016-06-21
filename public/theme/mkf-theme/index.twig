@@ -1,0 +1,13 @@
+{% extends 'partials/_layout.twig' %}
+
+{% block main %}
+
+    <h1>{%- if record.title is defined %}{{ record.title|striptags }} | {% endif -%}
+                {{ app.config.get('general/sitename') -}}</h1>
+
+    {{ record.teaser }}
+
+    {{ record.body }}
+
+
+{% endblock main %}

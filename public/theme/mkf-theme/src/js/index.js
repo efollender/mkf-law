@@ -1,0 +1,1 @@
+import styleSheet from '../stylus/index.styl';

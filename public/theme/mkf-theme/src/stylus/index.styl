@@ -1,0 +1,16 @@
+@import 'nib'
+@import 'rupture'
+@import 's-grid-settings'
+@import 's-grid-functions'
+
+body
+  font-family 'Noto Sans', sans
+
+.flex-container
+  grid()
+  &.building
+    background-size cover
+    background-position center
+    background-image url('../../images/building.jpeg')
+.flex-row
+  cell(1,1)
