@@ -1,0 +1,24 @@
+.jumbotron
+  grid('row', 'center')
+  background-size cover
+  background-position center
+  background-image url('http://localhost:9090/assets/building.jpg')
+  height calc(100vh - 56px)
+  position relative
+  &:after
+    content ''
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background rgba(black, .5)
+  .main
+    cell(1, 1, 'center')
+    text-align center
+    position relative
+    z-index 1
+    h1
+      color white
+      text-transform uppercase
+      font-weight 200

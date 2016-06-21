@@ -6,7 +6,7 @@ var stylusLoader = ExtractTextPlugin.extract("style-loader", "css-loader!stylus-
 if (DEBUG) var stylusLoader = "style-loader!css-loader!stylus-loader";
 
 var ROOT_PATH = path.resolve(__dirname);
-
+console.log(ROOT_PATH);
 module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:9090',
@@ -17,7 +17,7 @@ module.exports = {
     preLoaders: [
       {
         test: /\.js?$/,
-        loaders: ['eslint'],
+        loaders: ['babel','eslint'],
         exclude: /node_modules/,
         include: path.resolve(ROOT_PATH, 'js')
       }
@@ -45,16 +45,22 @@ module.exports = {
     fix: true,
     quotes: 'single'
   },
+  babel: {
+    presets: [
+      "es2015",
+      "stage-0"
+    ]
+  },
   resolve: {
     extensions: ['', '.js']
   },
   output: {
-    path: path.resolve('../', ROOT_PATH, 'scripts'),
+    path: path.resolve(ROOT_PATH),
     publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.resolve('../', ROOT_PATH, 'scripts'),
+    contentBase: path.resolve(ROOT_PATH),
     port: 9090,
     hot: true,
     inline: true,

@@ -1,16 +1,28 @@
 @import 'nib'
 @import 'rupture'
 @import 's-grid-settings'
+@import '_variables'
 @import 's-grid-functions'
+@import 'partials/index'
 
 body
-  font-family 'Noto Sans', sans
-
-.flex-container
-  grid()
-  &.building
-    background-size cover
-    background-position center
-    background-image url('../../images/building.jpeg')
-.flex-row
-  cell(1,1)
+  font-family sans-font
+  text-rendering optimizeLegibility
+  font-smoothing antialiased
+// h1
+// h2
+// h3
+// h4
+// h5
+// h6
+// 	font-family sans-font
+.wrapper
+	display flex
+	flex-direction column
+	min-height 100vh
+	main
+		flex 1 0 auto
+		position relative
+	header
+	footer
+		flex 0
