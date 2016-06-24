@@ -1,24 +1,56 @@
-.jumbotron
-  grid('row', 'center')
-  background-size cover
-  background-position center
-  background-image url('http://localhost:9090/assets/building.jpg')
-  height calc(100vh - 56px)
+.flex-slide__wrapper
+  background-color dk-grey
+  min-height 100vh
+  width 100%
   position relative
-  &:after
-    content ''
-    position absolute
-    top 0
-    left 0
-    right 0
-    bottom 0
-    background rgba(black, .5)
-  .main
-    cell(1, 1, 'center')
-    text-align center
-    position relative
-    z-index 1
-    h1
-      color white
-      text-transform uppercase
-      font-weight 200
+  &.cols-2
+    grid()
+    .flex-slide__content
+      cell(1,2)
+      position relative
+    .flex-slide__inner
+      position relative
+      transform none
+      p
+        margin-bottom 1em
+  &.light
+    background-color white
+    color dk-grey
+    border-bottom 3px solid highlight
+  &.hero
+    .flex-slide__content
+      position absolute
+      top 50px
+      left 50px
+      right 50px
+      bottom 50px
+      content ''
+    .flex-slide__inner
+      top 50%
+      left 0
+      right 0
+      transform translateY(-50%)
+      position absolute
+      text-align center
+      h1
+        position relative
+        display inline-block
+        color white
+        &:after
+          content ''
+          position absolute
+          bottom -.25em
+          left 50%
+          right 50%
+          height 2px
+          background md-grey
+          transition all .3s ease
+          animation grow .3s cubic-bezier(.04,.14,.14,1) forwards .2s
+        
+@keyframes grow
+  from 
+    right 50%
+    left 50%
+  to
+    right 25%
+    left 25%
