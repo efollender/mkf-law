@@ -11,7 +11,6 @@ layout:
 # Setting the header image. The default images in this theme all came from
 # Visualhunt: https://visualhunt.com/
 headshot: headshot.jpg
-home_bg: building.jpeg
 # Template filenames. If you 're creating a theme for distribution, you can specify
 # the filenames of the templates here. The templates you will set in this config
 # file will override the ones in the global app/config/config.yml, so beware!

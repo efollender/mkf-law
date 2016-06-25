@@ -1,5 +1,6 @@
 {% set main_width = theme.layout.main_width|default(8) %}
 {% set aside_width = theme.layout.aside_width|default(4) %}
+{% setcontent pages = 'pages' %}
 <!doctype html>
 <html class="no-js" lang="{{ htmllang() }}">
     <head>
@@ -13,26 +14,24 @@
                 {{ app.config.get('general/sitename') -}}
             {% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif -%}
         </title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
-        <link href='https://fonts.googleapis.com/css?family=Noto+Sans:700,700italic' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="{{ app.config.get('general/styles') }}"></script>
         {% block headincludes %}
         {% endblock headincludes %}
     </head>
     <body>
-        <div class="container">
-          {% include 'partials/_topbar.twig' %}
-        </div>
-        <div class="flex-container" style="background-image:url({{ theme.home_bg }});">
+        <div class="page-scroller__wrapper">
         {% block body %}
-
-            <div class="flex-row">
+            <section class="page-scroller__section">
+                <div class="flex-slide__wrapper hero">
 
                     {% block main %}
                     {% endblock main %}
 
-            </div>
-
+                </div>
+            </section>
+            {% for page in pages %}
+                {% include 'partials/_section.twig' %}
+            {% endfor %}
         {% endblock body %}
         </div>
         {% block bottomincludes %}

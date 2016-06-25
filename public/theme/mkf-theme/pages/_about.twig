@@ -1,0 +1,17 @@
+{% set blocks = record.related('blocks') %}
+<div class="about-section__wrapper light">
+	<div class="about-section__left">
+		{% for block in blocks %}
+				<div class="content-section">
+						<h4>{{ block.title }}</h4>
+						{{ block.content }}
+				</div>
+			{% endfor %}
+	</div>
+	<div class="about-section__right">
+		<div class="headshot">
+			<img src="files/{{ record.image }}">
+		</div>
+		{{ record.body }}
+	</div>
+</div>
