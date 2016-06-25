@@ -2,6 +2,7 @@
 	grid()
 	align-items center
 	height 100%
+	font-weight 400
 	.about-section
 		+below(breakpoints.md)
 			stack()
@@ -9,4 +10,18 @@
 		cell(1,4)
 	.about-section__right
 		cell(3,4)
-		
+	.headshot
+		width 150px
+		padding-top 150px
+		height 0
+		position relative
+		overflow hidden
+		margin 0em 1em 1em 0 
+		border 2px solid md-grey
+		display inline-block
+		float left
+		img
+			position absolute
+			top 0
+			left 0
+			width 100%
